@@ -204,5 +204,7 @@ No API activities were profiled.
 ======== Error: Application received signal 139
 root@MidPC:/home/student/Desktop#
 ```
+![w1](https://github.com/SOWMIYA2003/PCA-Matrix-Addition-With-Unified-Memory/assets/93427443/2cf72734-c70a-4192-93d9-5c8d5e035731)
 ## Result:
 Thus Matrix addition with unified memory is done and its performance with nvprof is checked.
+
