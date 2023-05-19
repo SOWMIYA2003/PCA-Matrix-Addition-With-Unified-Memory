@@ -4,10 +4,20 @@ performance? If you can, check performance with nvprof or nvvp.
 ## Aim:
   To perform Matrix addition with unified memory and check its performance with nvprof.
 ## Procedure:
-
+### Step 1 :
+Include the required files and library.
+### Step 2 : 
+Introduce a function named "initialData","sumMatrixOnHost","checkResult" to return the initialize the data , perform matrix summation on the host and then check the result.
+### Step 3 :
+Create a grid 2D block 2D global function to perform matrix on the gpu.
+### Step 4 :
+Declare the main function.
+In the main function set up the device & data size of matrix , perform memory allocation on host memory & initialize the data at host side then add matrix at host side for result checks followed by invoking kernel at host side. Then warm-up kernel,check the kernel error, and check device for results.Finally free the device global memory and reset device.
+### Step 5 :
+Execute the program and run the terminal . Check the performance using nvprof.
 ## Program : 
 ```
-#include "../common/common.h"
+#include "common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>
 
@@ -399,6 +409,8 @@ root@MidPC:/home/student/Desktop# ^C
 root@MidPC:/home/student/Desktop#
 ```
 ![2](https://github.com/SOWMIYA2003/PCA-Matrix-Addition-With-Unified-Memory/assets/93427443/f15528f8-36ae-445f-b038-2da3e8e98a9b)
+
+
 ## Result:
 Thus Matrix addition with unified memory is done and its performance with nvprof is checked.
 
