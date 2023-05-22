@@ -410,7 +410,14 @@ root@MidPC:/home/student/Desktop#
 ```
 ![2](https://github.com/SOWMIYA2003/PCA-Matrix-Addition-With-Unified-Memory/assets/93427443/f15528f8-36ae-445f-b038-2da3e8e98a9b)
 
+```
+memset(hostRef, 0, nBytes);
+memset(gpuRef, 0, nBytes);
 
+Removing these statements will have no effect on performance. The
+managed memory will still be resident on the CPU initially, and transferred to the
+GPU when the first kernel executes.
+```
 ## Result:
 Thus Matrix addition with unified memory is done and its performance with nvprof is checked.
 
