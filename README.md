@@ -414,9 +414,8 @@ root@MidPC:/home/student/Desktop#
 memset(hostRef, 0, nBytes);
 memset(gpuRef, 0, nBytes);
 
-Removing these statements will have no effect on performance. The
-managed memory will still be resident on the CPU initially, and transferred to the
-GPU when the first kernel executes.
+Removing these statements will have no effect on performance. 
+The managed memory will still be resident on the CPU initially, and transferred to the GPU when the first kernel executes.
 ```
 ## Result:
 Thus Matrix addition with unified memory is done and its performance with nvprof is checked.
