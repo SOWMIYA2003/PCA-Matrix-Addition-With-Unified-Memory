@@ -24,18 +24,6 @@ REGISTER NO : 212221230106
 #include <cuda_runtime.h>
 #include <stdio.h>
 
-/*
- * This example demonstrates the use of CUDA managed memory to implement matrix
- * addition. In this example, arbitrary pointers can be dereferenced on the host
- * and device. CUDA will automatically manage the transfer of data to and from
- * the GPU as needed by the application. There is no need for the programmer to
- * use cudaMemcpy, cudaHostGetDevicePointer, or any other CUDA API involved with
- * explicitly transferring data. In addition, because CUDA managed memory is not
- * forced to reside in a single place it can be transferred to the optimal
- * memory space and not require round-trips over the PCIe bus every time a
- * cross-device reference is performed (as is required with zero copy and UVA).
- */
-
 void initialData(float *ip, const int size)
 {
     int i;
@@ -196,18 +184,6 @@ REGISTER NO : 212221230106
 #include "common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>
-
-/*
- * This example demonstrates the use of CUDA managed memory to implement matrix
- * addition. In this example, arbitrary pointers can be dereferenced on the host
- * and device. CUDA will automatically manage the transfer of data to and from
- * the GPU as needed by the application. There is no need for the programmer to
- * use cudaMemcpy, cudaHostGetDevicePointer, or any other CUDA API involved with
- * explicitly transferring data. In addition, because CUDA managed memory is not
- * forced to reside in a single place it can be transferred to the optimal
- * memory space and not require round-trips over the PCIe bus every time a
- * cross-device reference is performed (as is required with zero copy and UVA).
- */
 
 void initialData(float *ip, const int size)
 {
@@ -415,15 +391,9 @@ root@MidPC:/home/student/Desktop# ^C
 root@MidPC:/home/student/Desktop#
 ```
 ![2](https://github.com/SOWMIYA2003/PCA-Matrix-Addition-With-Unified-Memory/assets/93427443/f15528f8-36ae-445f-b038-2da3e8e98a9b)
-
-```
-memset(hostRef, 0, nBytes);
-memset(gpuRef, 0, nBytes);
-
-Removing these statements will have no effect on performance. 
-The managed memory will still be resident on the CPU initially, and transferred to the GPU when the first kernel executes.
-```
 ## Result:
+Removing memset statements will have no effect on performance. 
+The managed memory will still be resident on the CPU initially, and transferred to the GPU when the first kernel executes.
 Thus Matrix addition with unified memory is done and its performance with nvprof is checked.
 
 
